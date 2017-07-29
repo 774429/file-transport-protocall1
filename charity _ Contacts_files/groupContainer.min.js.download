@@ -1,0 +1,2 @@
+"use strict";define("groupContainer",["lodash","containerCommon"],function(n,i){return{displayName:"WixGroupContainer",mixins:[i.mixins.containerMixin],statics:{useSantaTypes:!0},getSkinProperties:function(){return{"":{style:{}},inlineContent:{children:this.props.children}}}}});
+//# sourceMappingURL=groupContainer.min.js.map

@@ -1,0 +1,2 @@
+"use strict";define("bgImageStrip",["core","utils"],function(t,e){return{displayName:"BgImageStrip",mixins:[t.compMixins.skinBasedComp],statics:{useSantaTypes:!0},getSkinProperties:function(){return{bg:{style:{},"data-type":e.balataConsts.BG_IMAGE}}}}});
+//# sourceMappingURL=bgImageStrip.min.js.map

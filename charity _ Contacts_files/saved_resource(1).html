@@ -1,0 +1,346 @@
+
+<!-- saved from url=(0011)about:blank -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/common/ui/effects.css" rel="stylesheet" type="text/css"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/contentScripts/mainContainer.css" rel="stylesheet" type="text/css"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/contentScripts/toolbar.css" rel="stylesheet" type="text/css"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/contentScripts/screenSelection.css" rel="stylesheet" type="text/css"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/contentScripts/selectionMapper.css" rel="stylesheet" type="text/css"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/contentScripts/rewordify.css" rel="stylesheet" type="text/css"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/contentScripts/speech.css" rel="stylesheet" type="text/css"><link href="chrome-extension://mloajfnmjckfjbeeofcdaecbelnblden/contentScripts/helpers/byrei-dyndiv_0.5.css" rel="stylesheet" type="text/css"></head><body><div class="dji-sru-initial dji-sru-no-printable" dji-template-id="__dji_sru_main_container_content" id="__dji_sru_main_container_content">
+    <div id="dji-sru-drag-ghost"></div>
+    <div class="dji-sru-waiting"></div>
+    <div id="dji-sru-main-container-busy"></div>
+    <div class="dji-sru-clear-style">
+        <div class="dji-sru-toolbar">
+            <div id="__dji_sru_speakButton" class="dji-sru-toolbar-button"></div>
+            <div id="__dji_sru_screenshotButton" class="dji-sru-toolbar-button"></div>
+            <div id="__dji_sru_rewordifyButton" class="dji-sru-toolbar-button"></div>
+            <div id="__dji_sru_translateButton" class="dji-sru-toolbar-button"></div>
+            <div id="__dji_sru_highlightButton" class="dji-sru-toolbar-button dji-sru-disabled"></div>
+            <div class="dji-sru-outline-title-in-toolbar"></div>
+            <div id="__dji_sru_showButton" class="dji-sru-toolbar-button"></div>
+        </div>
+    </div>
+
+    <div class="dji-sru-pagination-container" dji-page-template="template-page">
+        <div class="dji-sru-pagination-container-viewport" style="width: 410px; left: 0px;"><div dji-template-id="template-page" class="dji-sru-page dji-sru-page-current" style="left: 0px; display: block;">
+    <div dji-template-id="dji-template-folder-page" class="dji-sru-folder-page">
+        <div class="dji-sru-page-toolbar">
+            <div class="dji-sru-page-toolbar-line1">
+                <div class="dji-sru-tb-button dji-sru-back-to-parent-folder-page">
+                    <i class="dji-material-icons dji-white">arrow_back</i>
+                </div>
+                <div class="dji-sru-toolbar-group dji-flex dji-end">
+                    <div class="dji-sru-tb-button dji-sru-show-search-outlines">
+                        <i class="dji-material-icons dji-white">search</i>
+                    </div>
+                    <div class="dji-sru-tb-button dji-sru-folder-page-new-folder">
+                        <i class="dji-material-icons dji-white">create_new_folder</i>
+                    </div>
+                    <div class="dji-sru-tb-button dji-sru-folder-page-menu">
+                        <i class="dji-material-icons dji-white">more_vert</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dji-sru-page-toolbar-line2">
+                <div class="dji-sru-folder-page-info"><div class="dji-sru-folder-name">Home</div></div>
+                <div class="dji-page-folder-new dji-outline"><i class="dji-material-icons dji-black">add</i></div>
+            </div>
+        </div>
+        <div class="dji-sru-page-content dji-sru-no-outline"></div>
+        <div class="dji-sru-search-outlines-overlay">
+            <div class="dji-sru-search-container">
+                <div class="dji-sru-page-toolbar dji-sru-search-toolbar">
+                    <div class="dji-search-buttons">
+                        <div class="dji-sru-tb-button dji-no-right-space dji-sru-hide-search-outlines">
+                            <i class="dji-material-icons">arrow_back</i>
+                        </div>
+                    </div>
+                    <div class="dji-sru-search-input">
+                        <input dji-sru-search-outlines-input="" placeholder="Search outlines">
+                    </div>
+                    <div class="dji-search-buttons">
+                        <div class="dji-sru-tb-button dji-sru-reset-search-outlines">
+                            <i class="dji-material-icons">close</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="dji-sru-search-result"></div>
+            </div>
+        </div>
+    </div></div></div>
+        <div class="dji-sru-pagination-container-overlay"></div>
+    </div>
+
+    <div style="width: 0; height: 0; overflow: hidden; margin: 0; padding: 0;">&nbsp;</div>
+    <!-- Please don't remove - workaround for speaking empty outlines (with no topic). -->
+
+    <!-- Topic toolbar -->
+    <div id="dji-sru-topics-toolbar">
+        <div class="dji-sru-pie-toolbar">
+            <div id="__dji_sru_linkButton" class="dji-sru-pie-toolbar-button"></div>
+            <div id="__dji_sru_indentButton" class="dji-sru-pie-toolbar-button"></div>
+            <div id="__dji_sru_outdentButton" class="dji-sru-pie-toolbar-button"></div>
+            <div id="__dji_sru_deleteTopicButton" class="dji-sru-pie-toolbar-button"></div>
+        </div>
+    </div>
+
+    <!--Source toolbar -->
+    <div id="dji-sru-sources-toolbar">
+        <div class="dji-sru-pie-toolbar">
+            <div id="__dji_sru_editSourceButton" class="dji-sru-pie-toolbar-button"></div>
+            <div id="__dji_sru_deleteSourceButton" class="dji-sru-pie-toolbar-button"></div>
+        </div>
+    </div>
+
+    <!-- Outline Page context menu -->
+    <!-- outline subfolder context menu -->
+    <div id="dji-sru-folder-page-context-menu">
+        <div class="dji-sru-context-menu">
+            <div id="dji-sru-folder-page-sort-by-alpha" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">sort_by_alpha</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Sort A &gt; Z</div>
+            </div>
+            <div id="dji-sru-folder-page-sort-by-time" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">access_time</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Sort New &gt; Old</div>
+            </div>
+            <div class="dji-sru-menu-separator-item"></div>
+            <div id="dji-sru-folder-page-move-to-outline-items" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">move_to_folder</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Move To ...</div>
+            </div>
+            <div id="dji-sru-folder-page-delete-outline-items" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">delete</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Delete</div>
+            </div>
+            <div class="dji-sru-menu-separator-item"></div>
+            <div id="dji-sru-folder-page-option-page" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">settings</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Options</div>
+            </div>
+            <div id="dji-sru-folder-page-sign-out" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">sign_out</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Sign out</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- outline subfolder item context menu -->
+    <div id="dji-sru-folder-page-item-context-menu">
+        <div class="dji-sru-context-menu">
+            <div id="dji-sru-folder-page-item-rename-outline" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">mode_edit</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Rename</div>
+            </div>
+            <div id="dji-sru-folder-page-item-move-to-outline" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">move_to_folder</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Move To ...</div>
+            </div>
+            <div id="dji-sru-folder-page-item-delete-outline" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">delete</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Delete</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- outline context menu -->
+    <div id="dji-sru-outline-page-context-menu">
+        <div class="dji-sru-context-menu">
+            <div id="dji-sru-outline-page-rename-outline" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">mode_edit</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Rename Outline</div>
+            </div>
+            <div id="dji-sru-outline-page-download" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">cloud_download</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Download</div>
+            </div>
+            <div id="dji-sru-outline-page-print" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">print</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Print</div>
+            </div>
+            <div class="dji-sru-menu-separator-item"></div>
+            <div id="dji-sru-search-outline-template" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">add_outline_template</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Add Outline Template</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- source tab item more  context menu -->
+    <div id="dji-sru-outline-new-source-more-context-menu">
+        <div class="dji-sru-context-menu">
+            <div id="dji-sru-search-sources" class="dji-sru-menu-item">
+                <div class="dji-sru-menu-item-icon">
+                    <i class="dji-material-icons dji-black">search</i>
+                </div>
+                <div class="dji-sru-menu-item-text">Search for Source</div>
+            </div>
+            <div class="dji-sru-menu-separator-item"></div>
+            <div class="dji-sru-menu-item" dji-item="dji-sru-outline-source-journal" dji-item-text="JOURNAL">
+                <div class="dji-sru-menu-item-icon"></div>
+                <div class="dji-sru-menu-item-text">Journal</div>
+            </div>
+            <div class="dji-sru-menu-item" dji-item="dji-sru-outline-source-magazine" dji-item-text="MAGAZINE">
+                <div class="dji-sru-menu-item-icon"></div>
+                <div class="dji-sru-menu-item-text">Magazine</div>
+            </div>
+            <div class="dji-sru-menu-item" dji-item="dji-sru-outline-source-newspaper" dji-item-text="NEWSPAPER">
+                <div class="dji-sru-menu-item-icon"></div>
+                <div class="dji-sru-menu-item-text">Newspaper</div>
+            </div>
+            <div class="dji-sru-menu-item" dji-item="dji-sru-outline-source-tv-radio" dji-item-text="TV/RADIO">
+                <div class="dji-sru-menu-item-icon"></div>
+                <div class="dji-sru-menu-item-text">Television/Radio</div>
+            </div>
+            <div class="dji-sru-menu-item" dji-item="dji-sru-outline-source-visual-art" dji-item-text="VISUAL ART">
+                <div class="dji-sru-menu-item-icon"></div>
+                <div class="dji-sru-menu-item-text">Visual Art</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Outline Page modal dialog -->
+    <!-- new folder/rename template -->
+    <div id="dji-folder-page-template-dlg-1" tabindex="1">
+        <div class="dji-sru-modal-dialog">
+            <div class="dji-sru-dialog-title">TODO: put dlg title</div>
+            <div class="dji-sru-input-container">
+                <input type="text" id="dji-folder-page-template-dlg-1-input" class="dji-sru-input">
+            </div>
+            <div class="dji-sru-popup-buttons">
+                <div id="dji-folder-page-template-dlg-1-cancel" class="dji-sru-popup-button">CANCEL</div>
+                <div id="dji-folder-page-template-dlg-1-done" class="dji-sru-popup-button">???</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- delele outline -->
+    <div id="dji-folder-page-delete-outline-dlg" tabindex="1">
+        <div class="dji-sru-modal-dialog">
+            <div class="dji-sru-dialog-message">This outline has no content. Would you like to delete it?</div>
+            <div class="dji-sru-popup-buttons">
+                <div id="dji-folder-page-delete-outline-dlg-save" class="dji-sru-popup-button">SAVE AND GO HOME</div>
+                <div id="dji-folder-page-delete-outline-dlg-delete" class="dji-sru-popup-button">DELETE</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- move to -->
+    <div id="dji-sru-outline-move-to-dlg" class="dji-sru-page" tabindex="1">
+        <div class="dji-sru-modal-dialog dji-fit-to-parent">
+            <div class="dji-sru-page-toolbar">
+                <div class="dji-sru-page-toolbar-line1">
+                    <div class="dji-sru-tb-button dji-sru-dialog-close">
+                        <i class="dji-material-icons dji-white">close</i>
+                    </div>
+                    <div class="dji-sru-tb-button dji-sru-dialog-back">
+                        <i class="dji-material-icons dji-white">arrow_back</i>
+                    </div>
+                    <div class="dji-sru-folder-page-info">Move to ...</div>
+                    <div class="dji-sru-toolbar-group dji-flex dji-end">
+                        <div class="dji-sru-tb-button dji-sru-outline-new-folder">
+                            <i class="dji-material-icons dji-white">create_new_folder</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="dji-sru-page-toolbar-line2">
+                    <div class="dji-sru-folder-page-info">Home</div>
+                </div>
+            </div>
+            <div class="dji-sru-page-content"></div>
+            <div class="dji-sru-popup-buttons">
+                <div id="dji-sru-outline-move-to-dlg-cancel" class="dji-sru-popup-button">CANCEL</div>
+                <div id="dji-sru-outline-move-to-dlg-done" class="dji-sru-popup-button dji-disable">MOVE</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- source dlg -->
+    <div id="dji-sru-outline-source-dlg" class="dji-sru-page" tabindex="1">
+        <div class="dji-sru-modal-dialog dji-fit-to-parent">
+            <div class="dji-sru-page-toolbar">
+                <div class="dji-sru-page-toolbar-line1">
+                    <div class="dji-sru-tb-button dji-sru-dialog-close">
+                        <i class="dji-material-icons dji-white">close</i>
+                    </div>
+                    <div class="dji-sru-folder-page-info">New source</div>
+                    <div class="dji-sru-toolbar-group dji-flex dji-end">
+                        <div class="dji-sru-tb-text-button dji-sru-outline-source-save">SAVE</div>
+                    </div>
+                </div>
+                <div class="dji-sru-page-toolbar-line2">
+                    <div class="dji-sru-tab-items">
+                        <div class="dji-sru-tab-item" dji-item="dji-sru-outline-source-book">BOOK</div>
+                        <div class="dji-sru-tab-item" dji-item="dji-sru-outline-source-webpage">WEBSITE</div>
+                        <div class="dji-sru-tab-item" dji-item="dji-sru-outline-source-journal">JOURNAL</div>
+                        <div class="dji-sru-tab-item-more" dji-item="dji-sru-outline-source-more">MORE</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dji-sru-page-content">
+                <div class="dji-tab-item-view dji-source-view" dji-sru-outline-source-book=""></div>
+                <div class="dji-tab-item-view dji-source-view" dji-sru-outline-source-webpage=""></div>
+                <div class="dji-tab-item-view dji-source-view" dji-sru-outline-source-journal=""></div>
+                <div class="dji-tab-item-view dji-source-view" dji-sru-outline-source-magazine=""></div>
+                <div class="dji-tab-item-view dji-source-view" dji-sru-outline-source-newspaper=""></div>
+                <div class="dji-tab-item-view dji-source-view" dji-sru-outline-source-tv-radio=""></div>
+                <div class="dji-tab-item-view dji-source-view" dji-sru-outline-source-visual-art=""></div>
+            </div>
+        </div>
+        <div class="dji-sru-search-sources-overlay">
+            <div class="dji-sru-search-container">
+                <div class="dji-sru-page-toolbar dji-sru-search-toolbar">
+                    <div class="dji-search-buttons">
+                        <div class="dji-sru-tb-button dji-no-right-space dji-sru-hide-search-sources">
+                            <i class="dji-material-icons">arrow_back</i>
+                        </div>
+                    </div>
+                    <div class="dji-sru-search-input">
+                        <input dji-sru-search-sources-input="" placeholder="Search sources">
+                    </div>
+                    <div class="dji-search-buttons">
+                        <div class="dji-sru-tb-button dji-sru-reset-search-sources">
+                            <i class="dji-material-icons">close</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="dji-sru-search-result"></div>
+            </div>
+        </div>
+    </div>
+<div dji-template-id="template-page-sources-popup" id="dji-sru-sources-popup">
+        <div class="dji-sru-dialog-title-bar">
+            <div id="__dji_sru_btnSourcesPopupCancel">Done</div>
+            <div class="dji-sru-dialog-title-center">Link to sources</div>
+        </div>
+        <div class="dji-sru-dialog-container">
+
+            <div class="dji-sru-dialog-content">
+
+
+            </div>
+            <div class="dji-sru-cite-button dji-sru-sources-popup">Cite new sources</div>
+
+        </div>
+    </div></div></body><div id="__DJI_CWE_SHORTCUTS" style="display: block; position: fixed; top: -5000px; left: -5000px;"><button accesskey="m" disabled="">Alt+M</button><button accesskey="n" disabled="">Alt+N</button></div></html>

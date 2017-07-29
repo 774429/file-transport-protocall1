@@ -1,0 +1,2 @@
+"use strict";define("screenWidthContainer",["lodash","core","santaProps"],function(i,e,n){return{displayName:"WixScreenWidthContainer",mixins:[e.compMixins.skinBasedComp],propTypes:{isMobileView:n.Types.isMobileView},statics:{useSantaTypes:!0},getInitialState:function(){return{$displayDevice:this.props.isMobileView?"mobileView":""}},getSkinProperties:function(){return{inlineContent:{children:this.props.children}}}}});
+//# sourceMappingURL=screenWidthContainer.min.js.map

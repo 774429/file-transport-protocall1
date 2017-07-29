@@ -1,0 +1,2 @@
+"use strict";define("popupCloseTextButton",["lodash","santaProps","siteButton","utils"],function(e,t,o,p){var s=e.cloneDeep(o);return s.displayName="PopupCloseTextButton",s.propTypes=e.defaults({closePopupPage:t.Types.popupPage.close},o.propTypes),s.getSkinProperties=function(){var e=o.getSkinProperties.apply(this,arguments);return e[""].onClick=this.props.closePopupPage,e[""].role="button",e[""].onKeyDown=p.accessibility.keyboardInteractions.activateBySpaceOrEnterButton,e[""].tabIndex="0",e},s});
+//# sourceMappingURL=popupCloseTextButton.min.js.map

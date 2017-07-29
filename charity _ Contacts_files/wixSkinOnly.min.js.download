@@ -1,0 +1,2 @@
+"use strict";define("wixSkinOnly",["core"],function(i){return{displayName:"WixSkinOnly",mixins:[i.compMixins.skinBasedComp],statics:{useSantaTypes:!0},getSkinProperties:function(){return{}}}});
+//# sourceMappingURL=wixSkinOnly.min.js.map

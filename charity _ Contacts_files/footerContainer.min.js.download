@@ -1,0 +1,2 @@
+"use strict";define("footerContainer",["lodash","core","containerCommon"],function(e,t,i){var n=t.compMixins,o=i.mixins.fixedPositionContainerMixin;return{displayName:"FooterContainer",mixins:[n.skinBasedComp,o],statics:{useSantaTypes:!0},getSkinProperties:function(){return{"":{tagName:"footer",style:this.getRootStyle(this.props.style),className:this.classSet({footer:!0})},inlineContent:{children:this.props.children}}}}});
+//# sourceMappingURL=footerContainer.min.js.map

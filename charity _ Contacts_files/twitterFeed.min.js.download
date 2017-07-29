@@ -1,0 +1,2 @@
+"use strict";define("twitterFeed",["core","santaProps"],function(e,t){function n(e){return e.accountToFollow||"wix"}var i=e.compMixins;return{displayName:"TwitterFeed",mixins:[i.skinBasedComp,i.skinInfo],propTypes:{compData:t.Types.Component.compData.isRequired},statics:{useSantaTypes:!0},getSkinProperties:function(){var e=n(this.props.compData);return{label:{children:e},link:{href:"https://twitter.com/intent/user?screen_name="+e}}}}});
+//# sourceMappingURL=twitterFeed.min.js.map

@@ -1,0 +1,2 @@
+"use strict";define("stripContainer",["lodash","core","mediaCommon","backgroundCommon"],function(i,n,e,t){var r=n.compMixins;return{displayName:"StripContainer",mixins:[e.mediaLogicMixins.fill,r.skinBasedComp,t.mixins.backgroundDetectionMixin],statics:{useSantaTypes:!0,behaviors:e.mediaBehaviors.fill},getDefaultSkinName:function(){return"wysiwyg.viewer.skins.stripContainer.DefaultStripContainer"},getSkinProperties:function(){return{"":{},background:this.createFillLayers(),inlineContent:{children:this.props.children}}}}});
+//# sourceMappingURL=stripContainer.min.js.map

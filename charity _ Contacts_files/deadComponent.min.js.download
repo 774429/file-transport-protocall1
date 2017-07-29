@@ -1,0 +1,2 @@
+"use strict";define("deadComponent",["core"],function(e){return{displayName:"DeadComponent",mixins:[e.compMixins.skinBasedComp],statics:{useSantaTypes:!0},getSkinProperties:function(){return{title:{},desc:{},desc2:{}}}}});
+//# sourceMappingURL=deadComponent.min.js.map
